@@ -1,0 +1,74 @@
+
+
+write about rboust file
+
+
+
+if u know that theres a favicon on a website then all u need to do is  curl link to the web /images/favicon.io | md5sum
+this above command will show us the hash value which can then be use to look up on owasp wikipedoia of hases revealing the framwe work
+
+the sitemap.xml file gives a list of every file the website owner wishes to be listed on a search engine.(may contain sensitive area)
+
+
+Hypertext Transfer Protocol (HTTP) is the protocol that specifies how a web browser and a web server communicate. 
+these http headers may sometimes reveal sensitive information
+
+use--curl 
+
+we should also use frame work stack like what where the previous problems with the frame work and all,and if theres any admin admin login credentials given
+
+
+another way to gather info osint
+example::Google hacking / Dorking utilizes Google's advanced search engine features, which allow you to pick out custom conten
+
+
+site:,inurl,filetype,intitle
+More information about google hacking can be found here: https://en.wikipedia.org/wiki/Google_hacking
+
+Wappalyzer:another useful tool again 
+
+
+waybackmachine:helps in finding website pages the old once can help dicover previously used pages still active
+
+https://archive.org/web/)
+
+
+git is a version control system
+wer can use this to locate and dicover repos --helping us gain things which we have not discovered yet
+
+
+
+
+📘 S3 Buckets - Summary
+S3 Buckets are cloud storage folders provided by AWS.
+
+They can store files like images, documents, or even websites.
+
+URLs follow the format: https://{bucket-name}.s3.amazonaws.com||bucket name can be anything like tryhackem-assests such types
+
+Permissions can be public, private, or writable.
+
+Misconfigured buckets can expose sensitive data.
+
+Buckets can be discovered via page source, GitHub, or automated guessing (e.g., company-assets, company-backup).
+
+
+automeated discovery
+
+using wordlist we search for files or directory we were previously unaware of,,,more over these tools would use lots of requeests to the server to gaain as much ifo as possible
+
+
+
+https://github.com/danielmiessler/SecLists--famous wordlist (resource)
+
+
+ffuf, dirb and gobuster.--3 automation tools for web enumerartion
+
+
+ffuf - w -u
+dirb -url+wordlist
+gobuster dir --url -w wordlist
+
+/usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+
+common wordlist

@@ -1,0 +1,25 @@
+https://youtu.be/iJLsiTbR5yc?si=YLrqwD75Ozg6Vv0u
+
+#age=int(input("wats ur age"))
+count1=0
+count2=0
+x=0
+while x!=1:
+ age=int(input("what is your age"))    
+ if age>=18:
+      print("eliigible to vote")
+      vote=int(input("cast ur vote,press 1 for bjp or 2 for congress"))
+      if vote==1:
+       count1=count1+1#for bjp
+      elif vote==2:
+          count2=count2+1#for congress
+      else:
+          print("sorry cad does not exist")
+ else:
+     print("sorry not elligible to vote")
+ x=int(input("press 1 to exit or press any number to vote"))
+print("number of votes for bjp",count1)
+print("number of votes for congress",count2)
+ 
+     
+

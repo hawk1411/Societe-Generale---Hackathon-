@@ -1,0 +1,23 @@
+review a website which can lead to vuln and these are the parts that might require user interactivity
+
+view-source:https://www.google.com/
+
+till now what i learnt
+
+always use the url to find things on website ||ctrl+shift+i||ctrl+u(always look for urls and updates(notification about why the app was updated))||note some directories may not show files in developers mode but may reveal wen viewd as page
+
+in order to search anything just do /what ever u found
+
+developers tool kit 
+
+1)debugger//helped me breakpoint like fixing a flashing object
+2)network//helped in way a  website interacts with the web
+3)inspector///if we wrote none in bloceker thing remember u should rember (we call it source)
+
+floating boxes blocking the page contents are often referred to as paywalls
+
+
+THM{CHANGE_DEFAULT_CREDENTIALS}
+
+THM{HEADER_FLAG}
+

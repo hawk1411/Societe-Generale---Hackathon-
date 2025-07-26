@@ -1,0 +1,7 @@
+idor-insecue direct object refernce--i.e user inputs is used to access objects--i.e access control vulnerability--too much trust by the server on us
+
+for example :http://online-service.thm/profile?user_id=1305,in this if we modify id we can check other user profile despite we are loged in  as ours
+
+unpredictable ids here we can make two accounts and swap theird id nos to see if we can login as other user
+
+learn how to manipulate webrequest

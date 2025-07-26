@@ -1,0 +1,363 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #6c757d; /* Gray */
+  --accent-color: #28a745; /* Green */
+  --background-color: #f8f9fa; /* Light Gray */
+  --card-background: #ffffff; /* White */
+  --text-color: #343a40; /* Dark Gray */
+  --border-color: #dee2e6; /* Lighter Gray */
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Container for page content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cards/Panels */
+.card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.card h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 500;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+  text-decoration: none; /* For links that look like buttons */
+  display: inline-block; /* For links that look like buttons */
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: calc(100% - 22px); /* Account for padding and border */
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--card-background);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Header */
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px var(--shadow-medium);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header nav ul li {
+  margin-left: 20px;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--text-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+
+/* Dashboard Specific Styles */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.dashboard-card {
+  text-align: center;
+}
+
+.dashboard-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.dashboard-card .btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+}
+
+/* File Upload/Verification Specific */
+.drop-area {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 18px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.drop-area:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+.status-message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.status-message.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Table styles */
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.audit-table th, .audit-table td {
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  text-align: left;
+}
+
+.audit-table th {
+  background-color: var(--background-color);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.audit-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.audit-table tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+  }
+  .header nav ul {
+    margin-top: 10px;
+  }
+  .header nav ul li {
+    margin: 0 10px;
+  }
+  .container {
+    padding: 15px;
+  }
+  .card {
+    padding: 20px;
+  }
+}
+
+/* src/index.css */
+/* ... (keep all your existing CSS) ... */
+
+/* New style for buttons that act as navigation links in the header */
+.btn-nav-link {
+  background: none;
+  border: none;
+  color: white; /* Matches header text color */
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-decoration: none; /* No underline by default */
+}
+
+.btn-nav-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline; /* Underline on hover for link-like behavior */
+}
+
+/* src/index.css */
+/* ... (keep all your existing CSS) ... */
+
+/* Header adjustment for centering title */
+.header .container {
+  display: flex;
+  /* Updated to center content horizontally */
+  justify-content: center; /* Centers items horizontally */
+  align-items: center;
+  position: relative; /* For positioning nav to the side */
+}
+
+
+.header nav {
+  /* Position nav bar to the right when logged in */
+  position: absolute;
+  right: 20px; /* Adjust as needed */
+}
+
+/* ... (keep existing .btn-nav-link and other styles) ... */
+
+/* src/index.css */
+
+/* ... (your existing CSS) ... */
+
+.highlight-text {
+  font-style: italic;
+  color: #007bff; /* A prominent color, choose one that fits your theme */
+  /* You can add more styles like text-shadow, background-color, etc. */
+}

