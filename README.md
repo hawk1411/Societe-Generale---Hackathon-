@@ -31,7 +31,7 @@ This project demonstrates a real-world use case of blockchain in securing digita
 
 ---
 
-##🚀 Getting Started
+## 🚀 Getting Started
 
 Follow these instructions to set up and run the project components locally.
 
