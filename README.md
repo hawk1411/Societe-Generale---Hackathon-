@@ -31,9 +31,118 @@ This project demonstrates a real-world use case of blockchain in securing digita
 
 ---
 
+##🚀 Getting Started
 
-### 1. Clone the Repository
+Follow these instructions to set up and run the project components locally.
 
-```bash
-git clone https://github.com/your-username/blockchain-file-verification.git
-cd blockchain-file-verification
+#### Prerequisites
+
+Ensure you have the following installed on your system:
+* **Node.js (LTS Version):** [Download and Install](https://nodejs.org/en/) (includes npm).
+* **npm:** Node Package Manager (comes bundled with Node.js).
+* **Git:** For cloning the repository.
+* **MetaMask (Optional but Recommended):** For interacting with Ethereum dApps in your browser during development.
+
+#### 1. Frontend Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/hawk1411/Societe-Generale---Hackathon-]
+    ```
+    Replace `[https://github.com/hawk1411/Societe-Generale---Hackathon-]` with the actual URL of your Git repository.
+2.  **Navigate to the frontend project directory:**
+    ```bash
+    cd blockchain-file-system-ui/frontend/blockchain-file-system-ui
+    ```
+3.  **Install Frontend dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Start the Frontend development server:**
+    ```bash
+    npm start
+    ```
+    This will open the application in your default web browser at `http://localhost:3000`.
+
+    #### 2. Backend Setup
+    The backend is built using Node.js with Express.js and acts as the bridge between the frontend application and the deployed smart contract on the Ethereum blockchain.
+
+🔧 Steps to Set Up the Backend:
+Navigate to the backend directory:
+
+bash
+
+cd blockchain-file-system-ui/backend
+Install dependencies:
+
+Ensure that you have express, web3, multer, fs, and crypto installed. If not, install them using:
+
+bash
+npm install express web3 multer fs crypto
+Ensure the following project structure inside the backend folder:
+
+server.js – Main Express server script
+
+uploads/ – Directory where uploaded files are stored temporarily
+
+contractABI.json – ABI of your deployed smart contract
+
+contractConfig.js – Contains your deployed contract address and network setup
+
+Start the backend server:
+
+bash
+node server.js
+The server should now be running at:
+
+
+http://localhost:3000
+How it works:
+
+The backend uses multer to handle file uploads.
+
+It computes the SHA-256 hash of the uploaded file.
+
+It connects to the Ethereum blockchain via web3.js using the Remix VM or MetaMask provider.
+
+It interacts with the deployed smart contract to store and verify the file hash on-chain.
+
+Environment Consideration:
+
+If using local development only (e.g., Remix VM), ensure that your contract is already deployed in Remix and that the ABI and address are correctly copied to your local backend files.
+
+If you plan to switch to MetaMask or a testnet (e.g., Goerli), update the provider accordingly in server.js:
+
+javascript
+const web3 = new Web3(new Web3.providers.HttpProvider("https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID"
+    ---
+
+### 📖 Usage
+
+Once the frontend application is running, you can:
+
+* **Explore the Landing Page:** Understand the project's core purpose and features.
+* **Navigate to Login:** Access the authentication page. (Currently uses **mock login: `username: user`, `password: password`** for testing the UI flow, as backend login logic is under development).
+* **Browse Information Pages:** Visit "About Us," "Contact Us," and "Privacy Policy" via the header or footer links.
+* **Interact with Core Functionalities (UI Mockups):** The UI for the Dashboard, File Upload, File Verification, and Audit Trail is present and ready for integration with the backend and blockchain logic (which is under development).
+
+—
+
+---
+
+### 👨‍💻 Built By Team Vulnhunt
+
+This project was conceived and developed during a hackathon by **Team Vulnhunt**:
+
+* **Kanak Soni** – UI/UX Designer
+* **Sakshi Chandravanshi** – Frontend Developer
+* **Ravi Kant Mishra** – Backend & Blockchain Integration
+* **Arya Kulkarni** – Smart Contract Developer
+
+---
+
+### 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+---
