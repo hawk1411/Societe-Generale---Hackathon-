@@ -12,4 +12,4 @@
 * Kanak Soni: UX/UI Design  
 * Sakshi Chandravanshi: Frontend Developer  
 * Arya Kapil Kulkarni: Smart Contract Developer  
-* Ravi Kant Mishra: Blockchain Integration
+* Ravi Kant Mishra: Backend & Blockchain Integration
