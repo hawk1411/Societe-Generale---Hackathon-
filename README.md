@@ -2,9 +2,14 @@
 
 This project is a decentralized web application that enables secure file uploads by leveraging blockchain technology to ensure data integrity, authenticity, and tamper-proof verification. When a user uploads a file through the system, its SHA-256 hash is computed on the server and stored immutably on the Ethereum blockchain using a custom smart contract written in Solidity.
 
-The backend, developed using Node.js, handles file uploads, hashing, and blockchain communication via Web3.js, while the smart contract ensures that each file hash, along with its metadata (filename, timestamp, and uploader), is permanently recorded. A frontend built with basic HTML/CSS/JavaScript provides an interface for users to upload files and view hash confirmation.
+The backend, developed using Node.js, handles file uploads, hashing, and blockchain communication via Web3.js, while the smart contract ensures that each file hash, along with its metadata (filename, timestamp, and uploader), is permanently recorded. A frontend built with React.js provides an interface for users to upload files and view hash confirmation.
 
 This project demonstrates a real-world use case of blockchain in securing digital assets and can be extended to include features like file encryption, wallet authentication via MetaMask, transaction history, and deployment on public Ethereum testnets.
+
+This project was conceived and developed by **Team Vulnhunt** during a hackathon, driven by the shared goal to **eliminate file tampering and ensure digital trust through decentralized verification.**
+
+**Current Development Status:** The Frontend UI is active and fully navigable. Core backend logic for user login and blockchain interactions (including audit trail processing) is currently **under development**.
+
 
 ---
 
@@ -23,7 +28,7 @@ This project demonstrates a real-world use case of blockchain in securing digita
 
 | Layer      | Technology             |
 |------------|------------------------|
-| Frontend   | React.js, Axios        |
+| Frontend   | React.js, React Router DOM, Pure CSS (with CSS Variables)        |
 | Backend    | Node.js, Express.js    |
 | Smart Contract | Solidity (via Remix / Hardhat) |
 | Blockchain | Ethereum (Testnet)     |
@@ -47,9 +52,8 @@ Ensure you have the following installed on your system:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/hawk1411/Societe-Generale---Hackathon-]
+    git clone [(https://github.com/hawk1411/secure-blockhain-based-file-upload-verification-system)]
     ```
-    Replace `[https://github.com/hawk1411/Societe-Generale---Hackathon-]` with the actual URL of your Git repository.
 2.  **Navigate to the frontend project directory:**
     ```bash
     cd blockchain-file-system-ui/frontend/blockchain-file-system-ui
@@ -64,58 +68,58 @@ Ensure you have the following installed on your system:
     ```
     This will open the application in your default web browser at `http://localhost:3000`.
 
-    #### 2. Backend Setup
-    The backend is built using Node.js with Express.js and acts as the bridge between the frontend application and the deployed smart contract on the Ethereum blockchain.
+   #### 2. Backend Setup
+The backend is built using Node.js with Express.js and acts as the bridge between the frontend application and the deployed smart contract on the Ethereum blockchain.
+
 
 🔧 Steps to Set Up the Backend:
-Navigate to the backend directory:
 
-bash
+
+1.  **Navigate to the backend directory:**
+
+```bash
 
 cd blockchain-file-system-ui/backend
-Install dependencies:
+```
+2.  **Install dependencies:**
 
-Ensure that you have express, web3, multer, fs, and crypto installed. If not, install them using:
+- Ensure that you have express, web3, multer, fs, and crypto installed. If not, install them using:
 
 bash
+```
 npm install express web3 multer fs crypto
-Ensure the following project structure inside the backend folder:
+```
+- Ensure the following project structure inside the backend folder:
 
-server.js – Main Express server script
+   - server.js – Main Express server script
+  
+   - uploads/ – Directory where uploaded files are stored temporarily
+  
+   - contractABI.json – ABI of your deployed smart contract
+  
+   - contractConfig.js – Contains your deployed contract address and network setup
 
-uploads/ – Directory where uploaded files are stored temporarily
-
-contractABI.json – ABI of your deployed smart contract
-
-contractConfig.js – Contains your deployed contract address and network setup
-
-Start the backend server:
+3.  **Start the backend server:**
 
 bash
+```
 node server.js
+```
 The server should now be running at:
 
-
 http://localhost:3000
-How it works:
 
-The backend uses multer to handle file uploads.
+#### How it works:
 
-It computes the SHA-256 hash of the uploaded file.
+- The backend uses multer to handle file uploads.
 
-It connects to the Ethereum blockchain via web3.js using the Remix VM or MetaMask provider.
+- It computes the SHA-256 hash of the uploaded file.
 
-It interacts with the deployed smart contract to store and verify the file hash on-chain.
+- It connects to the Ethereum blockchain via web3.js using the Remix VM or MetaMask provider.
 
-Environment Consideration:
+- It interacts with the deployed smart contract to store and verify the file hash on-chain.
 
-If using local development only (e.g., Remix VM), ensure that your contract is already deployed in Remix and that the ABI and address are correctly copied to your local backend files.
-
-If you plan to switch to MetaMask or a testnet (e.g., Goerli), update the provider accordingly in server.js:
-
-javascript
-const web3 = new Web3(new Web3.providers.HttpProvider("https://goerli.infura.io/v3/YOUR_INFURA_PROJECT_ID"
-    ---
+---
 
 ### 📖 Usage
 
@@ -125,8 +129,6 @@ Once the frontend application is running, you can:
 * **Navigate to Login:** Access the authentication page. (Currently uses **mock login: `username: user`, `password: password`** for testing the UI flow, as backend login logic is under development).
 * **Browse Information Pages:** Visit "About Us," "Contact Us," and "Privacy Policy" via the header or footer links.
 * **Interact with Core Functionalities (UI Mockups):** The UI for the Dashboard, File Upload, File Verification, and Audit Trail is present and ready for integration with the backend and blockchain logic (which is under development).
-
-—
 
 ---
 
@@ -144,5 +146,3 @@ This project was conceived and developed during a hackathon by **Team Vulnhunt**
 ### 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
----
