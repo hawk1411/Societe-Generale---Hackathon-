@@ -1,6 +1,10 @@
 # 🔐 Blockchain-based Secure File Upload & Verification System
 
-This project is a full-stack web application that allows users to securely upload files and verify their integrity using blockchain technology. It ensures tamper-proof storage by hashing uploaded files and storing their hashes on the blockchain. Later, any uploaded file can be verified for authenticity by comparing its hash with what's stored on the blockchain.
+This project is a decentralized web application that enables secure file uploads by leveraging blockchain technology to ensure data integrity, authenticity, and tamper-proof verification. When a user uploads a file through the system, its SHA-256 hash is computed on the server and stored immutably on the Ethereum blockchain using a custom smart contract written in Solidity.
+
+The backend, developed using Node.js, handles file uploads, hashing, and blockchain communication via Web3.js, while the smart contract ensures that each file hash, along with its metadata (filename, timestamp, and uploader), is permanently recorded. Optionally, a frontend built with basic HTML/CSS/JavaScript provides an interface for users to upload files and view hash confirmation.
+
+This project demonstrates a real-world use case of blockchain in securing digital assets and can be extended to include features like file encryption, wallet authentication via MetaMask, transaction history, and deployment on public Ethereum testnets.
 
 ---
 
@@ -27,7 +31,6 @@ This project is a full-stack web application that allows users to securely uploa
 
 ---
 
-## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
